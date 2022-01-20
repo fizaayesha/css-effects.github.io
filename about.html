@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+
+
+    <script src="https://code.iconify.design/2/2.1.1/iconify.min.js"></script>
+    <title>About</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            text-decoration: none;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #932e1afa;
+        }
+
+        nav {
+            width: 100%;
+            height: 60px;
+            background-color: #5e0202;
+            padding: 0px 80px;
+            line-height: 55px;
+        }
+
+        nav .logo {
+            float: left;
+            margin-top: 2px;
+            background: linear-gradient(112deg, black, brown, darkorange);
+            border-radius: 50%;
+        }
+
+        nav .logo p {
+            font-size: 25px;
+            font-weight: bolder;
+            letter-spacing: 1px;
+            color: white;
+            ;
+            text-transform: uppercase;
+            font-family: monospace;
+        }
+
+        nav ul {
+            float: right;
+        }
+
+        nav ul li {
+            display: inline-block;
+        }
+
+        nav ul li a {
+            font-size: 20px;
+            padding: 0px 20px;
+            font-weight: bolder;
+            font-family: calibri;
+            text-transform: uppercase;
+            color: white;
+            /* background-color: rgba(255, 253, 253, 0.329);
+    border: 2px solid white; */
+            border-radius: 30px;
+
+        }
+
+        nav ul li a:hover {
+            /* color: black; */
+            background: linear-gradient(112deg, black, brown, darkorange);
+            /* border: 2px solid black; */
+        }
+
+        /* nav ul .active {
+    color: black;
+    background-color: rgba(0, 0, 0, 0.39);
+    border: 2px solid black; 
+
+} */
+
+        label #icon {
+            float: right;
+            width: 30px;
+            height: 30px;
+            display: none;
+            margin-top: 15px;
+            cursor: pointer;
+        }
+
+        label #cross {
+            float: right;
+            width: 30px;
+            height: 30px;
+            display: none;
+            margin-top: 15px;
+            cursor: pointer;
+        }
+
+        #check {
+            display: none;
+        }
+
+        .matter {
+            list-style-type: none;
+            display: flex;
+            flex-wrap: wrap;
+            text-align: center;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            margin-top: 4vh;
+            margin-bottom: 4vh;
+        }
+
+        .box {
+            width: 90%;
+            height: 90vh;
+            background: linear-gradient(112deg, black, brown, darkorange);
+            border-radius: 5px;
+            color: white;
+            display: flex;
+            flex-wrap: wrap;
+            /* text-align: center; */
+            justify-content: center;
+            align-items: center;
+            font-size: 18px;
+            overflow-y: auto;
+            padding: 10px;
+            font-family: calibri;
+            font-weight: bold;
+        }
+
+        .box img {
+            width: 35vh;
+            height: 30vh;
+            border-radius: 6%;
+        }
+
+        .box p {
+            margin-top: 4%;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        .footer {
+            background-color: #5e0202;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 5px;
+        }
+
+        .footer img {
+            color: white;
+        }
+
+        @media screen and (max-width:990px) {
+            nav {
+                padding: 0px 50px;
+            }
+
+            label #icon {
+                display: block;
+            }
+
+            nav.logo p {
+                font-size: 30px;
+            }
+
+            nav ul {
+                width: 100%;
+                height: 100vh;
+                background-color: #992903;
+                position: fixed;
+                top: 60px;
+                left: -100%;
+                text-align: center;
+                transition: 0.5s ease;
+                position: absolute;
+            }
+
+            nav ul li {
+                display: block;
+                margin: 60px 0px;
+                line-height: 30px;
+            }
+
+            nav ul li a {
+                font-size: 24px;
+            }
+
+            #check:checked~ul {
+                left: 0;
+            }
+
+            #check:checked~label #icon {
+                display: none;
+            }
+
+            #check:checked~label #cross {
+                display: block;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <input type="checkbox" id="check">
+        <label for="check" class="checkbtn">
+            <i class="fa fa-bars" style="font-size:32px;color:white" id="icon"></i>
+            <i class="material-icons" style="font-size:32px;color:white" id="cross"></i>
+        </label>
+        <div class="logo">
+            <p>CSS</p>
+        </div>
+        <ul class="nav-list">
+            <li><a href="/">Home</a></li>
+            <li><a href="/css-effects.github.io/about">About</a></li>
+            <li><a href="/css-effects.github.io/effects">Effects</a></li>
+        </ul>
+    </nav>
+    <div class="matter">
+        <!-- <div class="box"><img src="history css.jpg" alt=""></div> -->
+        <div class="box">
+            <img src="history css.jpg" alt="photo"><span>
+                <p>
+                    CSS was first proposed by Håkon Wium Lie on October 10, 1994. At the time, Lie was working with
+                    Tim Berners-Lee at CERN.[23] Several other style sheet languages for the web were proposed around
+                    the same time, and discussions on public mailing lists and inside World Wide Web Consortium resulted
+                    in the first W3C CSS Recommendation (CSS1) being released in 1996. In particular, a proposal by
+                    Bert Bos was influential; he became co-author of CSS1, and is regarded as co-creator of CSS.
+                    Style sheets have existed in one form or another since the beginnings of Standard Generalized Markup
+                    Language (SGML) in the 1980s, and CSS was developed to provide style sheets for the web. One
+                    requirement for a web style sheet language was for style sheets to come from different sources on
+                    the web. Therefore, existing style sheet languages like DSSSL and FOSI were not suitable. CSS, on
+                    the other hand, let a document's style be influenced by multiple style sheets by way of "cascading"
+                    styles.
+
+                </p>
+            </span>
+        </div>
+    </div>
+    <div class="footer">
+        <a href="https://github.com/fizaayesha"><span class="iconify" data-icon="cib:github" data-width="25"
+                data-height="25" style="color: white;"></span>
+        </a>
+        <a href="https://www.linkedin.com/in/ayesha-khan-129434219"><span class="iconify-inline"
+                data-icon="entypo-social:linkedin-with-circle" data-width="25" data-height="25"
+                style="color: white;"></span></a>
+        <a href="http://instagram.com/ayesha__19__"><span class="iconify" data-icon="ant-design:instagram-filled"
+                data-width="25" data-height="25" style="color: white;"></span>
+
+        </a>
+    </div>
+
+</body>
+
+</html>

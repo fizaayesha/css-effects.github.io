@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+
+
+    <script src="https://code.iconify.design/2/2.1.1/iconify.min.js"></script>
+    <title>Home</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            text-decoration: none;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #932e1afa;
+        }
+
+        nav {
+            width: 100%;
+            height: 60px;
+            background-color: #5e0202;
+            padding: 0px 80px;
+            line-height: 55px;
+        }
+
+        nav .logo {
+            float: left;
+            margin-top: 2px;
+            background: linear-gradient(112deg, black, brown, darkorange);
+            border-radius: 50%;
+        }
+
+        nav .logo p {
+            font-size: 25px;
+            font-weight: bolder;
+            letter-spacing: 1px;
+            color: white;
+            ;
+            text-transform: uppercase;
+            font-family: monospace;
+        }
+
+        nav ul {
+            float: right;
+        }
+
+        nav ul li {
+            display: inline-block;
+        }
+
+        nav ul li a {
+            font-size: 20px;
+            padding: 0px 20px;
+            font-weight: bolder;
+            font-family: calibri;
+            text-transform: uppercase;
+            color: white;
+            /* background-color: rgba(255, 253, 253, 0.329);
+    border: 2px solid white; */
+            border-radius: 30px;
+
+        }
+
+        nav ul li a:hover {
+            /* color: black; */
+            background: linear-gradient(112deg, black, brown, darkorange);
+            /* border: 2px solid black; */
+        }
+
+        /* nav ul .active {
+    color: black;
+    background-color: rgba(0, 0, 0, 0.39);
+    border: 2px solid black; 
+
+} */
+
+        label #icon {
+            float: right;
+            width: 30px;
+            height: 30px;
+            display: none;
+            margin-top: 15px;
+            cursor: pointer;
+        }
+
+        label #cross {
+            float: right;
+            width: 30px;
+            height: 30px;
+            display: none;
+            margin-top: 15px;
+            cursor: pointer;
+        }
+
+        #check {
+            display: none;
+        }
+
+        .matter {
+            list-style-type: none;
+            display: flex;
+            flex-wrap: wrap;
+            text-align: center;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            margin-top: 4vh;
+        }
+
+        .box {
+            /* padding: 10px; */
+            font-family: calibri;
+            font-weight: bold;
+            line-height: 25px
+        }
+
+        .box:nth-child(n) {
+            width: 90%;
+            height: 8vh;
+            /* background-color: #01171e; */
+            background: linear-gradient(112deg, black, brown, darkorange);
+            border-radius: 5px;
+            color: white;
+            text-align: left;
+            font-size: 22px;
+            padding: 5px;
+            /* padding-top: 10px; */
+
+        }
+
+        .box:nth-child(2n) {
+            width: 90%;
+            height: 40vh;
+            background: linear-gradient(112deg, darkorange, brown, black);
+            border-radius: 5px;
+            text-align: left;
+            font-size: 19px;
+
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        #two,
+        #four,
+        #six {
+            padding: 10px;
+            overflow-y: auto;
+        }
+
+        .line {
+            text-decoration: underline;
+        }
+
+        .code {
+            background-color: black;
+            height: 30vh;
+            overflow-y: auto;
+            overflow-x: auto;
+            padding: 5px;
+            color: yellow;
+            border-radius: 10px;
+            font-size: 15px;
+        }
+
+        .sheet {
+            display: flex;
+            flex-wrap: wrap;
+            /* text-align: center; */
+            justify-content: center;
+            align-items: center;
+            gap: 5px;
+            margin-top: 4vh;
+        }
+
+        .html,
+        .css {
+            background-color: black;
+            width: 90vh;
+            height: 30vh;
+            overflow-y: auto;
+            overflow-x: auto;
+            padding: 5px;
+            color: yellow;
+            border-radius: 10px;
+            font-size: 15px;
+        }
+
+        .output {
+            background-color: black;
+            height: 10vh;
+            padding: 5px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            border-radius: 10px;
+        }
+
+        .footer {
+            background-color: #5e0202;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 5px;
+            color: white;
+        }
+
+        @media screen and (max-width:990px) {
+            nav {
+                padding: 0px 50px;
+            }
+
+            label #icon {
+                display: block;
+            }
+
+            nav.logo p {
+                font-size: 30px;
+            }
+
+            nav ul {
+                width: 100%;
+                height: 100vh;
+                background-color: #992903;
+                position: fixed;
+                top: 60px;
+                left: -100%;
+                text-align: center;
+                transition: 0.5s ease;
+                position: absolute;
+            }
+
+            nav ul li {
+                display: block;
+                margin: 60px 0px;
+                line-height: 30px;
+            }
+
+            nav ul li a {
+                font-size: 24px;
+            }
+
+            #check:checked~ul {
+                left: 0;
+            }
+
+            #check:checked~label #icon {
+                display: none;
+            }
+
+            #check:checked~label #cross {
+                display: block;
+            }
+        }
+
+        /* @media (max-width:1326px) and (min-width: 1094) {
+    #two {
+        padding: 20px;
+    }
+} */
+    </style>
+</head>
+
+<body>
+    <nav>
+        <input type="checkbox" id="check">
+        <label for="check" class="checkbtn">
+            <i class="fa fa-bars" style="font-size:32px;color:white" id="icon"></i>
+            <i class="material-icons" style="font-size:32px;color:white" id="cross"></i>
+        </label>
+        <div class="logo">
+            <p>CSS</p>
+        </div>
+        <ul class="nav-list">
+            <li><a href="/">Home</a></li>
+            <li><a href="/css-effects.github.io/about">About</a></li>
+            <li><a href="/css-effects.github.io/effects">Effects</a></li>
+        </ul>
+    </nav>
+    <div class="container">
+        <div class="matter">
+            <div class="box" id="one">
+                What is CSS?
+            </div>
+            <div class="box" id="two"> &#8203; &#8203; &#8203; &#8203; &#8203; &#8203; &#8203; &#8203;CSS(Cascading
+                Style Sheets), neither a programming language nor a markup language,
+                but it's a STYLE SHEET LANGUAGE. CSS is an easy programming language to learn at a basic level. The CSS
+                technology was designed to be accessible so anyone could create their own styled web pages on the
+                internet. It is use to describe the presentation of a markup language. It can control the layout of
+                multiple web pages all at once. External stylesheets are stored in CSS files. Also, there are many
+                advantages of CSS, like- it saves time, easy maintenance, gives superior styles to HTML, global web
+                standardss, multiple device
+                compatibility, pages load faster etc. There are basically three ways to give the CSS to the HTML text
+                and theese are- Inline CSS, Internal or Embedded CSS and External CSS. I'll explain these three methods
+                later. Also, we'll discuss many amazing properties of CSS and I will provide you separate code for HTML
+                and CSS both.</div>
+            <div class="box" id="three">What are the types of CSS?</div>
+            <div class="box" id="four">
+                <p> &#8203; &#8203; &#8203; &#8203; &#8203; &#8203; &#8203; &#8203;Cascanding
+                    Style Sheets(CSS)
+                    is used to to set the style in web pages that
+                    contain markup language elements. We can makes any HTML element very attractive by using the various
+                    properties of CSS, like adding background-color, giving color to the paragraph, we can also give 3-D
+                    shape to any figure and many more we'll discuss later.</p>
+                <p>Three types of CSS are given below:-</p>
+                1) <span class="line">Inline CSS</span>:- Inline CSS contains the CSS property in the bosy section
+                attached with
+                element is known as inline CSS. This kind of style is specified within in HTML tag using style
+                attribute. <br>
+                Example:
+                <div class="code">
+                    &lt;!DOCTYPE html&gt;<br>
+                    &lt;html lang="en"&gt;<br>
+                    &lt;head&gt;<br>
+                    &#8203; &#8203; &#8203; &#8203; &#8203; &#8203; &#8203; &#8203; &#8203;&lt;meta charset="UTF-8"
+                    &gt;<br>
+                    &#8203; &#8203; &#8203; &#8203; &#8203; &#8203; &#8203; &#8203; &#8203;&lt;meta
+                    http-equiv="X-UA-Compatible"
+                    content="IE=edge" &gt;<br>
+                    &#8203; &#8203; &#8203; &#8203; &#8203; &#8203; &#8203; &#8203; &#8203;&lt;meta name="viewport"
+                    content="width=device-width,
+                    initial-scale=1.0" &gt;<br>
+                    &#8203; &#8203; &#8203; &#8203; &#8203; &#8203; &#8203; &#8203; &#8203;&lt;title &gt;Types of CSS
+                    &lt;/title &gt;<br>
+                    &lt;/head&gt; <br>
+                    &lt;body&gt; <br>
+                    &#8203; &#8203; &#8203; &#8203; &#8203; &#8203; &#8203; &#8203;&lt;p
+                    style="color:white;"&gt;Types of
+                    CSS &lt;/p&gt; <br>
+                    &lt;/body&gt; <br>
+                    &lt;/html&gt;
+                </div>
+                <br>
+                2) <span class="line">Internal or Embedded CSS</span>:- This can be used when a single HTML document
+                must be styled uniquely. The CSS rule set should be within the HTML file in the head section i.e the CSS
+                is embedded within the HTML file.
+                <br>
+                Example:
+                <div class="code">
+                    &lt;!DOCTYPE html&gt;<br>
+                    &lt;html lang="en"&gt;<br>
+                    &lt;head&gt;<br>
+                    &#8203; &#8203; &#8203; &#8203; &#8203; &#8203; &#8203; &#8203; &#8203;&lt;meta charset="UTF-8"
+                    &gt;<br>
+                    &#8203; &#8203; &#8203; &#8203; &#8203; &#8203; &#8203; &#8203; &#8203;&lt;meta
+                    http-equiv="X-UA-Compatible"
+                    content="IE=edge" &gt;<br>
+                    &#8203; &#8203; &#8203; &#8203; &#8203; &#8203; &#8203; &#8203; &#8203;&lt;meta name="viewport"
+                    content="width=device-width,
+                    initial-scale=1.0" &gt;<br>
+                    &#8203; &#8203; &#8203; &#8203; &#8203; &#8203; &#8203; &#8203; &#8203;&lt;title &gt;Types of CSS
+                    &lt;/title &gt;<br>
+                    &#8203; &#8203; &#8203; &#8203; &#8203; &#8203; &#8203; &#8203; &#8203;&lt;style><br>
+                    &#8203; &#8203; &#8203; &#8203; &#8203; &#8203; &#8203; &#8203; &#8203; &#8203; &#8203; &#8203;
+                    &#8203; &#8203; &#8203; &#8203; &#8203; &#8203; p {<br>
+                    &#8203; &#8203; &#8203; &#8203; &#8203; &#8203; &#8203; &#8203; &#8203; &#8203; &#8203; &#8203;
+                    &#8203; &#8203; &#8203; &#8203; &#8203; &#8203; &#8203; &#8203; &#8203; &#8203; &#8203; &#8203;
+                    &#8203; &#8203; &#8203;color: white;<br>
+                    &#8203; &#8203; &#8203; &#8203; &#8203; &#8203; &#8203; &#8203; &#8203; &#8203; &#8203; &#8203;
+                    &#8203; &#8203; &#8203; &#8203; &#8203; &#8203;}<br>
+                    &#8203; &#8203; &#8203; &#8203; &#8203; &#8203; &#8203; &#8203; &#8203;&lt;/style &gt;<br>
+                    &lt;/head &gt;<br>
+                    &lt;body &gt;<br>
+                    &#8203; &#8203; &#8203; &#8203; &#8203; &#8203; &#8203; &#8203; &#8203;&lt;p &gt;Types of
+                    CSS&lt;/p &gt;<br>
+                    &lt;/body &gt;<br>
+                    &lt;/html &gt;<br>
+
+                </div>
+                <br>
+                3) <span class="line">External CSS</span>:- External CSS contains separate CSS file which contains only
+                style property with the help of tag attributes (For example class, id, heading, … etc). CSS property
+                written in a separate file with .css extension and should be linked to the HTML document using link tag.
+                This means that for each element, style can be set only once and that will be applied across web pages.
+                <br>
+                Example:- Let's say HTML's file name is index.html and CSS's file name is style.css
+                <div class="sheet">
+                    <div class="html">
+                        <p style="color:grey">&lt;!-- index.html --l&gt;<br></p>
+                        &lt;!DOCTYPE html&gt;<br>
+                        &lt;html lang="en"&gt;<br>
+                        &lt;head&gt;<br>
+                        &#8203; &#8203; &#8203; &#8203; &#8203; &#8203; &#8203; &#8203; &#8203;&lt;meta charset="UTF-8"
+                        &gt;<br>
+                        &#8203; &#8203; &#8203; &#8203; &#8203; &#8203; &#8203; &#8203; &#8203;&lt;meta
+                        http-equiv="X-UA-Compatible"
+                        content="IE=edge" &gt;<br>
+                        &#8203; &#8203; &#8203; &#8203; &#8203; &#8203; &#8203; &#8203; &#8203;&lt;meta name="viewport"
+                        content="width=device-width,
+                        initial-scale=1.0" &gt;<br>
+                        &#8203; &#8203; &#8203; &#8203; &#8203; &#8203; &#8203; &#8203; &#8203;&lt;link rel="stylesheet"
+                        href="style.css" &gt;<br>
+                        &#8203; &#8203; &#8203; &#8203; &#8203; &#8203; &#8203; &#8203; &#8203;&lt;title &gt;Types of
+                        CSS
+                        &lt;/title &gt;<br>
+                        &lt;/head &gt;<br>
+                        &lt;body &gt;<br>
+                        &#8203; &#8203; &#8203; &#8203; &#8203; &#8203; &#8203; &#8203; &#8203;&lt;p &gt;Types
+                        of
+                        CSS&lt;/p &gt;<br>
+                        &lt;/body &gt;<br>
+                        &lt;/html &gt;<br>
+                    </div>
+                    <div class="css">
+                        <p style="color:grey">&lt;!-- style.css --l&gt;<br></p>
+                        p {<br>
+                        &#8203; &#8203; &#8203; &#8203; &#8203; &#8203; &#8203; &#8203; &#8203; &#8203; &#8203;
+                        &#8203;color: white;<br>
+                        }<br>
+                    </div>
+
+                </div><br>
+                <h4>Output in all the three cases will be same</h4>
+                <div class="output">
+                    <!DOCTYPE html>
+                    <html lang="en">
+
+                    <head>
+                        <meta charset="UTF-8">
+                        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+                        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                        <title>Types of CSS</title>
+                        <style>
+                            p {
+                                color: white;
+                            }
+                        </style>
+
+                    </head>
+
+                    <body>
+                        <p>Types of CSS</p>
+                    </body>
+
+                    </html>
+                </div>
+            </div>
+            <div class="box" id="five">Style Rules in CSS</div>
+            <div class="box" id="six"> &#8203; &#8203; &#8203; &#8203; &#8203; &#8203; &#8203; &#8203;A CSS consists of
+                style rules that are integrated by browser and then applied to
+                the corresponding elements in your document. A style role is made of three parts: <br>
+                1) <span class="line">Selector</span>: A selector is an HTML tag at which a style will be applied. This
+                could be any tag like &lt;p&gt;, &lt;span&gt;, &lt;h1&gt;, &lt;h2&gt; etc. <br>
+                2) <span class="line">Property</span>: A property is a type of attribute of HTML tag. Put simply, all
+                the HTML attributes are converted into CSS properties. They could be color, border, etc. <br>
+                3) <span class="line">Value</span>: Values are assigned to properties. For example, color property can
+                have the value either red or <em>#F1F1F1 etc.</em> <br>
+            </div>
+        </div>
+        <br>
+    </div>
+    <div class="footer">
+        <a href="https://github.com/fizaayesha"><span class="iconify" data-icon="cib:github" data-width="25"
+                data-height="25" style="color: white;"></span>
+        </a>
+        <a href="https://www.linkedin.com/in/ayesha-khan-129434219"><span class="iconify-inline"
+                data-icon="entypo-social:linkedin-with-circle" data-width="25" data-height="25"
+                style="color: white;"></span></a>
+        <a href="http://instagram.com/ayesha__19__"><span class="iconify" data-icon="ant-design:instagram-filled"
+                data-width="25" data-height="25" style="color: white;"></span>
+
+        </a>
+    </div>
+</body>
+
+</html>
